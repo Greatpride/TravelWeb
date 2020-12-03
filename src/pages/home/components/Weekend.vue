@@ -2,11 +2,11 @@
   <div>
     <div class="title">周末去哪儿</div>
     <ul>
-        <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
+        <li class="weekend-item border-bottom" v-for="item of recommendList" :key="item.id">
             <div class="item-img-wrapper">
-                <img class="item-img" :src="item.imgUrl"/>
+                <img class="weekend-item-img" :src="item.imgUrl"/>
             </div>
-            <div class="item-info">
+            <div class="weekend-item-info">
                 <p class="item-title">{{item.title}}</p>
                 <p class="item-desc">{{item.desc}}</p>
             </div>
@@ -51,9 +51,11 @@ export default {
     overflow hidden
     height 0
     padding-bottom 33.9%
-    .item-img
+    .weekend-item-img
       width 100%
-  .item-info
+      padding 0 .1rem 0 .1rem
+  .weekend-item-info
+    width 1rem
     flex 1
     padding .1rem
     .item-title

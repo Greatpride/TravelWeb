@@ -2,11 +2,11 @@
   <div>
     <div class="title">热销推荐</div>
     <ul>
-        <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
+        <li class="item border-bottom" v-for="item of list" :key="item.id">
                 <img class="item-img" :src="item.imgUrl"/>
             <div class="item-info">
-                <p class="item-title">{{item.title}}</p>
-                <p class="item-desc">{{item.desc}}</p>
+                <p class="item-title">{{item.address}}</p>
+                <p class="item-desc">{{item.name}}</p>
                 <button class="item-button">查看详情</button>
             </div>
         </li>
@@ -17,25 +17,9 @@
 <script>
 export default {
    name: 'homeRecommend',
-   data (){
-       return {
-        recommendList:[{
-           id:'0001',
-           imgUrl:"http://img1.qunarzz.com/sight/p0/201403/07/30b534b0de51ccac2906bcb6ba159988.jpg_200x200_2f08733b.jpg",
-           title:"大连海洋圣地",
-           desc:"浪漫大连首站浪漫大连首站浪漫大连首站浪漫大连首站浪漫大连首站浪漫大连首站浪漫大连首站浪漫大连首站浪漫大连首站浪漫大连首站浪漫大连首站浪漫大连首站浪漫大连首站浪漫大连首站浪漫大连首站浪漫大连首站"
-       },{
-           id:'0002',
-           imgUrl:"http://img1.qunarzz.com/sight/p0/201403/07/30b534b0de51ccac2906bcb6ba159988.jpg_200x200_2f08733b.jpg",
-           title:"大连海洋圣地",
-           desc:"浪漫大连首站浪漫大连首站浪漫大连首站浪漫大连首站浪漫大连首站浪漫大连首站浪漫大连首站浪漫大连首站浪漫大连首站浪漫大连首站浪漫大连首站浪漫大连首站浪漫大连首站浪漫大连首站浪漫大连首站浪漫大连首站"
-       },{
-           id:'0003',
-           imgUrl:"http://img1.qunarzz.com/sight/p0/201403/07/30b534b0de51ccac2906bcb6ba159988.jpg_200x200_2f08733b.jpg",
-           title:"大连海洋圣地",
-           desc:"浪漫大连首站浪漫大连首站浪漫大连首站浪漫大连首站浪漫大连首站浪漫大连首站浪漫大连首站浪漫大连首站浪漫大连首站浪漫大连首站浪漫大连首站浪漫大连首站浪漫大连首站浪漫大连首站浪漫大连首站浪漫大连首站"
-       }]}
-   }    
+   props: {
+     list:Array
+   }   
 }
 </script>
 

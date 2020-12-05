@@ -1,6 +1,6 @@
 <template>
     <div class="icons">
-      <swiper>
+      <swiper :options="swiperOption">
         <swiper-slide v-for="(page,index) of pages" :key="index">
         <div class="icon" v-for="item of page" :key="item.id">
             <div class="icon-img">
@@ -16,50 +16,19 @@
 <script>
 export default {
     name:'homeIcons',
+    props: {
+      icons:Array
+    },
     data(){
       return {
-        iconList:[{
-          id:'0001',
-          imgUrl: "http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20209/158387fe5376294f3776d01358d6b73b.png",
-          desc:'景点门票'
-        },{
-          id:'0002',
-          imgUrl: "http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20209/158387fe5376294f3776d01358d6b73b.png",
-          desc:'滑雪季节'
-        },{
-          id:'0003',
-          imgUrl: "http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20209/158387fe5376294f3776d01358d6b73b.png",
-          desc:'滑雪季节'
-        },{
-          id:'0004',
-          imgUrl: "http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20209/158387fe5376294f3776d01358d6b73b.png",
-          desc:'滑雪季节'
-        },{
-          id:'0005',
-          imgUrl: "http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20209/158387fe5376294f3776d01358d6b73b.png",
-          desc:'滑雪季节'
-        },{
-          id:'0006',
-          imgUrl: "http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20209/158387fe5376294f3776d01358d6b73b.png",
-          desc:'滑雪季节'
-        },{
-          id:'0007',
-          imgUrl: "http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20209/158387fe5376294f3776d01358d6b73b.png",
-          desc:'滑雪季节'
-        },{
-          id:'0008',
-          imgUrl: "http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20209/158387fe5376294f3776d01358d6b73b.png",
-          desc:'滑雪季节'
-        },{
-          id:'0009',
-          imgUrl: "http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20209/158387fe5376294f3776d01358d6b73b.png",
-          desc:'滑雪季节'
-        }]
+        swiperOption:{
+          autoplay:false
+        }
       }
     },
     computed:{pages (){
       const pages = []
-      this.iconList.forEach((item,index) => {
+      this.icons.forEach((item,index) => {
         const page = Math.floor(index/8)
         if (!pages[page]) {
           pages[page] = []

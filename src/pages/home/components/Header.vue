@@ -51,11 +51,7 @@ export default {
       width:1.24rem
       float:right
       text-align:center
-<<<<<<< HEAD
       color : #fff
-=======
-      color #fff
->>>>>>> city-search
       .arrow-icon
         font-size :.24rem
 </style>

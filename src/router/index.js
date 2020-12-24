@@ -1,11 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import home from '@/pages/home/home.vue'
-<<<<<<< HEAD
-import city from '@/pages/city/city'
-=======
 import city from '@/pages/city/city.vue'
->>>>>>> city-search
 
 Vue.use(Router)
 
